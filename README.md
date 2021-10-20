@@ -8,3 +8,12 @@ Edges - In relational database we need to create joins to connect tables similer
 Tiger graph is a property graph which means these vertices and edges can contains the attributes.
 For e.g suppose you have two vertices payment and order having attributes -id, amount and id, quantity these can have a relation using "accepted" edge which can have a date as attribute.  
 
+## GSQL Commands - 
+GSQL is a query language for the graph database.
+
+### Create vertex-
+CREATE VERTEX PERSON (PRIMARY_ID ID STRING, email STRING, username STRING, created_at DATETIME) WITH primary_id_as_attribute='true'
+
+### Create directed edge-
+CREATE DIRECTED EDGE posted (fROM PERSON To Post, post_date DATETIME) WITH REVERSE EDGE = "reverse_posted"
+
