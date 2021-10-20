@@ -17,3 +17,4 @@ CREATE VERTEX PERSON (PRIMARY_ID ID STRING, email STRING, username STRING, creat
 ### Create directed edge-
 CREATE DIRECTED EDGE posted (fROM PERSON To Post, post_date DATETIME) WITH REVERSE EDGE = "reverse_posted"
 
+###
