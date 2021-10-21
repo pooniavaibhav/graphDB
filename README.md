@@ -17,4 +17,14 @@ CREATE VERTEX PERSON (PRIMARY_ID ID STRING, email STRING, username STRING, creat
 ### Create directed edge-
 CREATE DIRECTED EDGE posted (fROM PERSON To Post, post_date DATETIME) WITH REVERSE EDGE = "reverse_posted"
 
-###
+###Create a graph
+CREATE GRAPH MYGRAPH("person,post,hashtag,message,posted,reverse_posted,liked,reverse_liked,has_tag,reverse_hastag,sent_message")
+
+###LoadData-
+#### $1,$2,$3 defines the index of the column-
+#### USE GRAPH MYGRAPH
+#### { 
+#### BEGIN
+#### LOAD MYDATASOURCE TO VERTEX POST($1,$2) USING SEPERATOR = "",HEADER = "True",eol="\\n", QUOTE="DOUBLE";  
+#### }
+#### END
